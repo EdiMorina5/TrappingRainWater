@@ -1,0 +1,26 @@
+body {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #visualization {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .bar {
+    fill: #808080;
+  }
+  
+  .water {
+    fill: #0000ff;
+  }
+
+  .axis-line {
+    stroke: black;
+    stroke-width: 2px;
+  }
