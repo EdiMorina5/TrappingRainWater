@@ -11,7 +11,7 @@ function visualize() {
     let right = size;
     let bars = barHeights.map((height, i) => ({
       height,
-      x: i * 50 + (n * 50 * 0.3),
+      x: i * 50 + (n * 50 * 0.4),
       y: 0,
       width: 40,
       trappedWater: 0,
@@ -74,3 +74,4 @@ function visualize() {
     const maxWaterValue = document.getElementById("maxWaterValue");
     maxWaterValue.textContent = "Maximum water: " + water;
   }
+
