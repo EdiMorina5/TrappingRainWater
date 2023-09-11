@@ -14,34 +14,34 @@ const stepTitles = [
 ];
 
 const textContent = [
-    "We start with an array representing the heights of bars. Here's our initial configuration. We'll be visualizing how the trapping rainwater algorithm works on this input",
-    "Now, we introduce two pointers—one starting from the left and the other from the right. These pointers will help us navigate through the bars.",
-    "At each step, we compare the heights of the bars that the pointers are currently pointing to",
-    "In this case, the left pointer points to a shorter bar than the right pointer. We'll move the left pointer one step to the right.",
-    "As the left pointer moves, we update the maximum height it has encountered on its left",
-    "We repeat steps 3 to 5, comparing heights and moving the pointers until the left pointer reaches the right pointer",
+    "We start with an array representing the heights of bars. Here's our initial configuration. We'll visualize how the trapping rainwater algorithm works on this input.",
+    "Now, we introduce two pointers: one starting from the left and the other from the right. These pointers will help us navigate through the bars.",
+    "At each step, we compare the heights of the bars that the pointers are currently pointing to and move one pointer depending on the height.",
+    "After moving the right pointer, the first condition it encounters allows us to find 'leftMax,' and we move the left pointer accordingly.",
+    "After moving the left pointer, the left bar's height is smaller than that on the right, and it's also smaller than 'leftMax,' so we know we have trapped water.",
+    "We repeat steps 3 to 5, comparing heights and moving the pointers until the left pointer reaches the right pointer.",
     "Here's our final visualization. The blue bars represent trapped water. The algorithm has completed."
-];
+  ];  
 
 const imageSources = [
-    "Algorithm.png",
-    "Algorithm.png",
-    "Algorithm.png",
-    "Algorithm.png",
-    "Algorithm.png",
-    "Algorithm.png",
-    "Algorithm6.png"
+    "Algorithm1.jpg",
+    "Algorithm2.jpg",
+    "Algorithm3.png",
+    "Algorithm4.png",
+    "Algorithm5.png",
+    "Algorithm6.png",
+    "Algorithm7.png"
 ];
 
 const codeExplanation = [
     "",
-    "Initialize two pointers, left starting at 0 and right starting at the last index of the array",
-    "If barHeights[left] < barHeights[right], move the left pointer one step to the right: left++.",
-    "If barHeights[left] > leftMax, update leftMax to the new maximum height.",
-    "",
+    "We initialize two pointers: 'left' starting at 0 and 'right' starting at the last index of the array.",
+    "If 'barHeights[left]' is less than 'barHeights[right]' (in our case, they are equal), we move the right pointer one step to the left using 'right--'.",
+    "So now, 'barHeights[left]' is greater than 'barHeights[right]'. It goes inside the 'if' block. We update 'leftMax' to the new maximum height and move the left pointer one step to the right using 'left++'.",
+    "At this point, 'barHeights[left]' is less than 'barHeights[right]', but 'barHeights[left]' is also less than 'leftMax'. This condition signifies that we have trapped water. We calculate the amount of trapped water using 'water += leftMax - barHeights[left]'.",
     "",
     ""
-]
+  ];
 
 let currentStep = 1;
 const totalSteps = stepTitles.length;
