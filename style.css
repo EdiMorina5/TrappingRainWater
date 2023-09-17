@@ -29,6 +29,9 @@ canvas {
   z-index: -1;
 }
 
+#maxWaterValue{
+  margin-top: 20px;
+}
 
 .container {
   position: relative;
