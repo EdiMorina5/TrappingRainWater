@@ -24,13 +24,13 @@ const textContent = [
   ];  
 
 const imageSources = [
-    "Algorithm1.jpg",
-    "Algorithm2.jpg",
-    "Algorithm3.png",
-    "Algorithm4.png",
-    "Algorithm5.png",
-    "Algorithm6.png",
-    "Algorithm7.png"
+    "Images/Algorithm1.jpg",
+    "Images/Algorithm2.jpg",
+    "Images/Algorithm3.png",
+    "Images/Algorithm4.png",
+    "Images/Algorithm5.png",
+    "Images/Algorithm6.png",
+    "Images/Algorithm7.png"
 ];
 
 const codeExplanation = [
@@ -46,41 +46,34 @@ const codeExplanation = [
 let currentStep = 1;
 const totalSteps = stepTitles.length;
 
-// Initialize total pages
 totalPages.textContent = totalSteps;
 
-// Update the current step and format
 function updateCurrentStep() {
     currentPage.textContent = currentStep;
 }
 
-// Function to update content and images for the current step
 function updateContentForStep(step) {
     const titleElement = textContainer.querySelector("strong");
     titleElement.textContent = `Step ${step}: ${stepTitles[step - 1]}`;
 
-    // Update the text content based on the step number
     textContainer.querySelector("p").textContent = textContent[step - 1];
 
     const codeExplanationDiv = document.getElementById("codeExplanation");
     codeExplanationDiv.textContent = codeExplanation[step - 1];
 
-    // Update the image source based on the step number
     imageContainer.src = imageSources[step - 1];
 }
 
-// Event listener for the "Next" button
 nextPageBtn.addEventListener("click", () => {
   if (currentStep < totalSteps) {
       currentStep++;
   } else {
-      currentStep = 1; // Go back to the first step if at the last step
+      currentStep = 1; 
   }
   updateCurrentStep();
   updateContentForStep(currentStep);
 });
 
-// Event listener for the "Previous" button
 prevPageBtn.addEventListener("click", () => {
     if (currentStep > 1) {
         currentStep--;
@@ -89,6 +82,5 @@ prevPageBtn.addEventListener("click", () => {
     }
 });
 
-// Initialize content for the first step
 updateContentForStep(currentStep);
 updateCurrentStep();

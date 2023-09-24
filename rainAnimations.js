@@ -136,7 +136,7 @@ function drawLightning() {
     for (var pc = 0; pc < light.path.length; pc++) {
       ctx3.lineTo(light.path[pc].x, light.path[pc].y);
     }
-    if (Math.floor(random(0, 30)) === 1) { //to fos apo piso
+    if (Math.floor(random(0, 30)) === 1) { 
       ctx3.fillStyle = 'rgba(255, 255, 255, ' + random(1, 3) / 100 + ')';
       ctx3.fillRect(0, 0, w, h);
     }
@@ -176,7 +176,7 @@ function animateLightning() {
   if (lightTimeCurrent >= lightTimeTotal) {
     createLightning();
     lightTimeCurrent = 0;
-    lightTimeTotal = 200;  //rand(100, 200)
+    lightTimeTotal = 200; 
   }
   drawLightning();
 }

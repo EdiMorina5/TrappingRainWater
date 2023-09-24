@@ -32,13 +32,11 @@
             element is processed once, and the number of iterations through the
             loop is directly proportional to the size of the input.<br /><br />
             Space Complexity:<br />
-            Space complexity refers to the amount of memory an algorithm uses as
-            a function of the input size. In the given code, the space
-            complexity is O(1), which means it uses a constant amount of extra
-            memory regardless of the input size. The memory usage does not grow
-            with the size of the input because it only uses a few variables
-            (leftMax, rightMax, water, and possibly some additional variables
-            like bars) to keep track of intermediate results.
+            Space complexity refers to the amount of memory an algorithm uses as a function of the input size.
+            In the given code, the space complexity is O(N), which means it uses an amount of extra memory
+            that grows linearly with the size of the input. This increase in memory usage is primarily due
+            to the creation of the 'bars' array, which stores information about the heights of individual blocks of 
+            rainwater and any additional variables needed for intermediate results.
           </p>
           <br />
           <ul>
@@ -47,13 +45,12 @@
               once.
             </li>
             <li>
-              Space Complexity: O(1) because it uses a constant amount of
-              additional memory regardless of the input size.
+              Space Complexity: O(n) because it uses an amount of additional memory that grows linearly with the input size.
             </li>
           </ul>
         </div>
         <div class="col-md-6">
-          <img src="BigO.png" alt="Algorithm Explanation" class="img-fluid" />
+          <img src="Images/BigO.png" alt="Algorithm Explanation" class="img-fluid" />
         </div>
       </div>
 
@@ -73,7 +70,7 @@
         </div>
         <div class="col-md-6">
           <img
-            src="Algorithm1.jpg"
+            src="Images/Algorithm1.jpg"
             alt="Image 0"
             id="imageContainer"
             class="img-fluid"
@@ -103,9 +100,9 @@
           <div class="d-flex flex-column align-items-center mt-4">
             <!-- Use d-flex and flex-column to create a flex container -->
             <label for="barHeights" class="label-text"
-              >Enter Bar Heights (comma-separated):</label
-            >
+              >Enter Bar Heights (comma-separated):</label>
             <input type="text" id="barHeights" class="form-control" />
+            <p id="errorText" style="color: red;"></p>
             <button onclick="visualize()" class="btn btn-primary mt-3">
               Visualize
             </button>

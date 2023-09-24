@@ -1,5 +1,3 @@
-
-
 body {
   @include size(100%);
   margin: 0;
@@ -83,6 +81,7 @@ ul li {
 
 h2 {
   color: white; 
+  margin-top: 15px;
 }
 
 p {
@@ -115,10 +114,6 @@ p {
 .section-3{
   margin-top: 20%;
   margin-bottom: 10%;
-}
-
-h2{
-  margin-top: 15px;
 }
 
 #textContainer {

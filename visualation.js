@@ -2,6 +2,15 @@ function visualize() {
     const barHeightsInput = document.getElementById("barHeights").value;
     const barHeights = barHeightsInput.split(",").map(Number);
 
+    const isInvalid = barHeights.some(number => number > 9);
+
+    if (isInvalid) {
+        document.getElementById("errorText").textContent = "We only visualize bar heights under 9";
+        inputField.value = numbers.map(number => Math.min(number, 9)).join(",");
+    } else {
+       document.getElementById("errorText").textContent = "";
+    }
+
     const n = barHeights.length;
     const size = n - 1;
     let water = 0;
@@ -9,9 +18,10 @@ function visualize() {
     let rightMax = 0;
     let left = 0;
     let right = size;
+    let spacing = 41; 
     let bars = barHeights.map((height, i) => ({
       height,
-      x: i * 50 + (n * 50 * 0.4),
+      x: i * spacing + (n * spacing * 0.4),
       y: 0,
       width: 40,
       trappedWater: 0,
@@ -22,7 +32,6 @@ function visualize() {
 
     svg.selectAll("*").remove();
 
-    // Draw the bars
     svg
       .selectAll(".bar")
       .data(bars)
@@ -56,7 +65,6 @@ function visualize() {
       }
     }
 
-    // Draw the water bars
     svg
       .selectAll(".water")
       .data(bars)
@@ -70,7 +78,6 @@ function visualize() {
       .attr("fill", "#0000ff")
       .attr("opacity", (d) => (d.isTrappingWater ? 1 : 0));
 
-    // Draw the maximum water value
     const maxWaterValue = document.getElementById("maxWaterValue");
     maxWaterValue.textContent = "Maximum water: " + water;
   }
